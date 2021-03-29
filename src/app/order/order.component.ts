@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { OrderService } from './order.service';
 import { CartItem } from 'app/restaurant-detail/shopping-cart/cart-item.model';
 import { RadioOption } from 'app/shared/radio/radio-option.model';
+import { Order, OrderItem } from './order.model';
 
 @Component({
   selector: 'mt-order',
@@ -18,29 +19,40 @@ export class OrderComponent implements OnInit {
     {label: 'Cartão Refeição', value: 'REF'}
   ]
 
-  constructor(private oderService: OrderService) { }
+  constructor(private orderService: OrderService) { }
 
   ngOnInit() {
   }
 
   itemsValue(): number {
-    return this.oderService.itemsValue()
+    return this.orderService.itemsValue()
   }
 
   cartItems(): CartItem[]{
-    return this.oderService.cartItems()
+    return this.orderService.cartItems()
   }
 
   increaseQty(item: CartItem){
-    this.oderService.increaseQty(item)
+    this.orderService.increaseQty(item)
   }
 
   decreaseQty(item: CartItem){
-    this.oderService.decreaseQty(item)
+    this.orderService.decreaseQty(item)
   }
 
   remove(item: CartItem){
-    this.oderService.remove(item)
+    this.orderService.remove(item)
+  }
+
+  checkOrder(order: Order){
+    order.orderItems = this.cartItems()
+      .map((item:CartItem)=> new OrderItem(item.quantity, item.menuItem.id))
+    this.orderService.checkOrder(order)
+      .subscribe( (orderId: string) => {
+    console.log(`compra conlcuída: ${orderId}`)
+      this.orderService.clear()
+    })
+    console.log(order)
   }
 
 }

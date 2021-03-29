@@ -1,4 +1,4 @@
-# Meat - Angular App Starter
+# Outlet - Angular App Starter
 
 ## 1. Passos para começar
 

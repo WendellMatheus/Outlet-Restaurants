@@ -8,7 +8,7 @@ export class RatingComponent implements OnInit {
 
   @Output() rated = new EventEmitter<number>()
 
-  rates: number [] = [1,2,3,4,5]
+  rates: number[] = [1,2,3,4,5]
 
   rate: number = 0
 
@@ -19,7 +19,7 @@ export class RatingComponent implements OnInit {
   ngOnInit() {
   }
 
-  setRating(r: number){
+  setRate(r: number){
     this.rate = r
     this.previousRate = undefined
     this.rated.emit(this.rate)

@@ -370,36 +370,5 @@
       "restaurantId": "tasty-treats"
     }
   ],
-  "orders": [
-    {
-      "address": "aaaaa",
-      "number": "1111",
-      "optional": "111111",
-      "paymentOption": "MON",
-      "orderItems": [
-        {
-          "quantity": 3,
-          "menuId": "cup-cake"
-        }
-      ],
-      "id": 1
-    },
-    {
-      "address": "211w21e21e",
-      "number": "212112",
-      "optional": "",
-      "paymentOption": "MON",
-      "orderItems": [
-        {
-          "quantity": 2,
-          "menuId": "cup-cake"
-        },
-        {
-          "quantity": 2,
-          "menuId": "donut"
-        }
-      ],
-      "id": 2
-    }
-  ]
+  "orders": []
 }

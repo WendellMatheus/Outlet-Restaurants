@@ -370,5 +370,22 @@
       "restaurantId": "tasty-treats"
     }
   ],
-  "orders": []
+  "orders": [
+    {
+      "name": "Wendell Matheus Barros da Silva",
+      "email": "wendellmatheus77@gmail.com",
+      "emailConfirmation": "wendellmatheus77@gmail.com",
+      "address": "Avenida 04 Cohab 01 Vila Rica",
+      "number": "11",
+      "optionalAddress": "11",
+      "paymentOption": "MON",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "cup-cake"
+        }
+      ],
+      "id": 1
+    }
+  ]
 }

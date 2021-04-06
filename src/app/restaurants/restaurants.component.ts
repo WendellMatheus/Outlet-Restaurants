@@ -6,6 +6,12 @@ import { Restaurant } from './restaurant/restaurant.model';
 import { RestaurantsService } from './restaurants.service';
 
 import 'rxjs/add/operator/switchMap'
+import 'rxjs/add/operator/debounceTime'
+import 'rxjs/add/operator/distinctUntilChanged'
+import 'rxjs/add/operator/catch'
+import 'rxjs/add/observable/from'
+import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'mt-restaurants',
@@ -33,7 +39,7 @@ export class RestaurantsComponent implements OnInit {
   searchForm: FormGroup
   searchControl: FormControl
 
-  constructor(private RestaurantsService: RestaurantsService,
+  constructor(private restaurantsService: RestaurantsService,
               private fb: FormBuilder) { }
 
   ngOnInit() {
@@ -44,11 +50,15 @@ export class RestaurantsComponent implements OnInit {
     })
 
     this.searchControl.valueChanges
-    .switchMap(searchTerm =>
-      this.RestaurantsService.restaurants(searchTerm))
+      .debounceTime(500)
+      .distinctUntilChanged()
+      .switchMap(searchTerm =>
+        this.restaurantsService
+            .restaurants(searchTerm)
+            .catch(error=>Observable.from([])))
       .subscribe(restaurants => this.restaurants = restaurants)
 
-    this.RestaurantsService.restaurants()
+    this.restaurantsService.restaurants()
     .subscribe(restaurants => this.restaurants = restaurants)
   }
 

@@ -3,12 +3,12 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MEAT_API } from 'app/app.api';
 import { Observable } from 'rxjs';
-import 'rxjs/add/operator/map'
+import 'rxjs/add/operator/map';
 
-import { CartItem } from './../restaurant-detail/shopping-cart/cart-item.model';
 import { ShoppingCartService } from './../restaurant-detail/shopping-cart/shopping-cart.service';
+import { CartItem } from './../restaurant-detail/shopping-cart/cart-item.model';
+import {Order, OrderItem } from './order.model';
 
-import {Order, OrderItem } from './order.model'
 
 @Injectable()
 

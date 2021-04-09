@@ -462,6 +462,22 @@
         }
       ],
       "id": 5
+    },
+    {
+      "name": "wendell",
+      "email": "wendell@gmail.com",
+      "emailConfirmation": "wendell@gmail.com",
+      "address": "Avenida 04 Cohab 01 Vila Rica",
+      "number": "111",
+      "optionalAddress": "11",
+      "paymentOption": "MON",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "cup-cake"
+        }
+      ],
+      "id": 6
     }
   ]
 }

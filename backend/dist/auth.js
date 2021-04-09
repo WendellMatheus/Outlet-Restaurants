@@ -2,8 +2,8 @@
 exports.__esModule = true;
 exports.handleAuthentication = void 0;
 var users_1 = require("./users");
-var jwt = require("jsonwebtoken");
 var api_config_1 = require("./api-config");
+var jwt = require("jsonwebtoken");
 var handleAuthentication = function (req, resp) {
     var user = req.body;
     if (isValid(user)) {

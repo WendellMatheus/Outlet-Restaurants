@@ -478,6 +478,26 @@
         }
       ],
       "id": 6
+    },
+    {
+      "name": "Wendell Matheus Barros da Silva",
+      "email": "wendellmatheus77@gmail.com",
+      "emailConfirmation": "wendellmatheus77@gmail.com",
+      "address": "Avenida 04 Cohab 01 Vila Rica",
+      "number": "1234",
+      "optionalAddress": "232",
+      "paymentOption": "MON",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "cup-cake"
+        },
+        {
+          "quantity": 1,
+          "menuId": "donut"
+        }
+      ],
+      "id": 7
     }
   ]
 }

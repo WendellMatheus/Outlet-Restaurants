@@ -12,13 +12,12 @@ import {Order, OrderItem } from './order.model';
 import { MEAT_API } from 'app/app.api';
 import { LoginService } from '../security/login/login.service'
 
-
 @Injectable()
 
 export class OrderService {
 
   constructor (private cartService: ShoppingCartService,
-               private http: HttpClient,
+              private http: HttpClient,
               private loginService: LoginService){}
 
   itemsValue(): number {
